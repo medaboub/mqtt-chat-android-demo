@@ -20,6 +20,26 @@ MQTT CHAT Android is an android library that provides full chat functionality an
   </table>
   
   
+
+## Library features
+- Real-time Text Messaging
+- One-on-one Chat
+- Photos Sharing
+- Capture photos from Webcam
+- Stickers & Emojis
+- Block Users
+- Friends feature for dating or social networks websites
+- Voice Notes
+- Audio & Video Calls using WebRTC
+- Typing Indicators
+- Read Receipts
+- Languages : ar, fr, en
+- Storage Space : up to 2Go
+- Data Retention : up to 30 days
+- Offline notifications
+- Offline audio and video calls
+- Presence Callback URL
+
 ## Importing the Library
 1- Add MQTTCHAT Artifactory repository to the list of Maven repositories in your top level <code>build.gradle</code> file:
 ```android
@@ -43,24 +63,6 @@ dependencies {
     implementation 'com.telifoun.mqttchat:mqttchat-gui:1.0.0'
 }
 ```
-## Library features
-- Real-time Text Messaging
-- One-on-one Chat
-- Photos Sharing
-- Capture photos from Webcam
-- Stickers & Emojis
-- Block Users
-- Friends feature for dating or social networks websites
-- Voice Notes
-- Audio & Video Calls using WebRTC
-- Typing Indicators
-- Read Receipts
-- Languages : ar, fr, en
-- Storage Space : up to 2Go
-- Data Retention : up to 30 days
-- Offline notifications
-- Offline audio and video calls
-- Presence Callback URL
 
 ## Usage
 
