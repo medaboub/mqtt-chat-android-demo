@@ -347,15 +347,19 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
         iv.setText("Plugin Gui here");
         view.addView(iv);     
     }
-
-  
+    
+    @Override
+    public View getRootView() {
+        return view;
+    }  
+    
     /**
      * function that render plugin item in messages listview
      * @param linearLayout
      * @param view
      * @param message
      * @return
-     */
+     */     
     @Override
     public View render(LinearLayout linearLayout, View view, Message message) {
         if(view==null){
