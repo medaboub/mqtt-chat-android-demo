@@ -84,7 +84,7 @@ dependencies {
  
 2. In LoginActivity After user login success, You can connect user to MQTT CHAT using <code>login</code> function.
 ```android
-  Mqttchat.getmInstance().login(getApplication(), userId, new Callback() {
+  Mqttchat.getmInstance().logIn(getApplication(), userId, new Callback() {
    @Override
    public void OK(Object o) {
    }
