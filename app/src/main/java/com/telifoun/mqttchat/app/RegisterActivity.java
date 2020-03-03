@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void OK(RestResponse restResponse) {
                         mProgressDialog.setMessage("User add success");
                         mProgressDialog.setMessage("Login to demo application with new user ...");
-                        Mqttchat.getmInstance().login(getApplication(), Integer.parseInt(userId.getText().toString()), new Callback() {
+                        Mqttchat.getmInstance().logIn(getApplication(), Integer.parseInt(userId.getText().toString()), new Callback() {
                             @Override
                             public void OK(Object o) {
                                 mProgressDialog.dismiss();

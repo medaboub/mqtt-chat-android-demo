@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
 
            mProgressBar.setVisibility(View.VISIBLE);
 
-            Mqttchat.getmInstance().login(getApplication(), Integer.parseInt(userId), new Callback() {
+            Mqttchat.getmInstance().logIn(getApplication(), Integer.parseInt(userId), new Callback() {
                 @Override
                 public void OK(Object o) {
                     mProgressBar.setVisibility(View.GONE);
