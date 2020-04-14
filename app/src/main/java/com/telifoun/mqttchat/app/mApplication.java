@@ -8,6 +8,15 @@ import com.telifoun.mqttchat.core.listeners.mqttchatListener;
 import com.telifoun.mqttchat.core.messenger.Ack;
 import com.telifoun.mqttchat.core.messenger.Message;
 import com.telifoun.mqttchat.gui.Mqttchat;
+import com.telifoun.mqttchat.plugins.picture_cam.listeners.pictureCamListener;
+import com.telifoun.mqttchat.plugins.picture_cam.pictureCam;
+import com.telifoun.mqttchat.plugins.picture_disk.listeners.pictureDiskListener;
+import com.telifoun.mqttchat.plugins.picture_disk.pictureDisk;
+import com.telifoun.mqttchat.plugins.pluginA;
+import com.telifoun.mqttchat.plugins.records.listeners.recordsListener;
+import com.telifoun.mqttchat.plugins.records.records;
+import com.telifoun.mqttchat.plugins.stickers.Stickers;
+import com.telifoun.mqttchat.plugins.stickers.listeners.stickersListener;
 import com.telifoun.mqttchat.sdk.sdk;
 import com.telifoun.mqttchat.app.modules.userProfile;
 import com.telifoun.mqttchat.app.plugins.samplePlugin;
@@ -84,6 +93,7 @@ public class mApplication  extends Application {
                 Log.e(Tag,"MQTTCHAT error code :"+i+";message :"+s);
             }
         });
+
 
         /** add custom user profile module to MQTTCHAT APP **/
         userProfile mProfile=new userProfile(getApplicationContext(),"User Profile","Go to Profile");

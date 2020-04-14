@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "289985024411",
+    "firebase_url": "https://telifoun-1526952155163.firebaseio.com",
+    "project_id": "telifoun-1526952155163",
+    "storage_bucket": "telifoun-1526952155163.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289985024411:android:9910ced158808812d8113e",
+        "android_client_info": {
+          "package_name": "com.telifoun.mqttchat.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289985024411-sftf01mu9o6v2bt7mu5ojpa5pied8gr4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzLVuy-UEsqweej-4SrbAJKUTpIRLC2X8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289985024411-sftf01mu9o6v2bt7mu5ojpa5pied8gr4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
