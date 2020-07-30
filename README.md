@@ -59,8 +59,8 @@ allprojects {
 2-You can then simply add MQTT CHAT artifacts as a dependencies in the build.gradle file of your main project:
 ```android
 dependencies {
-    implementation 'com.telifoun.mqttchat:mqttchat-core:1.0.2'
-    implementation 'com.telifoun.mqttchat:mqttchat-gui:1.0.2'
+    implementation 'com.telifoun.mqttchat:mqttchat-core:1.1.0'
+    implementation 'com.telifoun.mqttchat:mqttchat-gui:1.1.0'
 }
 ```
 
@@ -284,5 +284,5 @@ sdkUser user =new sdkUser();
 });
 ```
 
-__For more informations please read the complete <a href="https://mqttchat.telifoun.com/doc">MQTT CHAT documentation</a>.__
+__For more informations please read the complete <a href="https://mqttchat.telifoun.com/developers/mqtt-chat-documentation">MQTT CHAT documentation</a>.__
 
