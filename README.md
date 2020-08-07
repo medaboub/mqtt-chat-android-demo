@@ -66,7 +66,7 @@ dependencies {
 
 ## Usage
 
-1. In <code>Application</code> class of your Android App add the following code to init MQTT CHAT:  You can get your own App_Id and App_Secret after registration to MQTT CHAT website: <a href="https://mqttchat.telifoun.com" target="_blank">https://mqttchat.telifoun.com</a>.
+1. In <code>Application</code> class of your Android App add the following code to init MQTT CHAT:  You can get your own App_Id and App_Secret after registration to MQTT CHAT website: <a href="https://mqttchat.telifoun.com" target="_blank">https://mqtt-chat.com</a>.
 
 ```android
  new Mqttchat.getBuilder()
@@ -284,5 +284,5 @@ sdkUser user =new sdkUser();
 });
 ```
 
-__For more informations please read the complete <a href="https://mqttchat.telifoun.com/developers/mqtt-chat-documentation">MQTT CHAT documentation</a>.__
+__For more informations please read the complete <a href="https://mqtt-chat.com/developers/mqtt-chat-documentation">MQTT CHAT documentation</a>.__
 
