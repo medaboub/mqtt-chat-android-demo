@@ -40,6 +40,6 @@ MQTTchat Android is an android library that provides full chat functionality and
 - Offline audio and video calls
 - Presence Callback URL
 
-
+## Documentation
 __For more informations please read the complete <a href="https://doc.mqtt-chat.com/mqttchat-android/integration">MQTTchat android documentation</a>.__
 
