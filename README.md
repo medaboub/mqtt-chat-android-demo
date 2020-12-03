@@ -40,6 +40,22 @@ MQTTchat Android is an android library that provides full chat functionality and
 - Offline audio and video calls
 - Presence & messages webhooks.
 
+## adding new user php code for demo (using mqttchat rest api).
+
+```php
+     require_once 'library/My/sdk/vendor/autoload.php';
+     $post=Zend_Json::decode($this->getRequest()->getRawBody()); 
+     $users=new telifoun\mqttchat\users(); 
+     $post_array=array("userid"=>$post["userid"],
+                       "name"=>$post["name"],
+                       "surname"=>$post["surname"],
+                       "gender"=>$post["gender"]);
+     $result=$users->add($post_array);
+     $this->getResponse()
+             ->setHttpResponseCode(200)            
+             ->setBody($this->getHelper('json')->sendJson($result));  
+```
+
 ## Documentation
 __For more informations please read the complete <a href="https://doc.mqtt-chat.com/mqttchat-android/integration">MQTTchat android documentation</a>.__
 
