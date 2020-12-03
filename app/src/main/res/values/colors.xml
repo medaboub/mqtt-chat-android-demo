@@ -6,5 +6,5 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="mqttchat_colorPrimary">#FFF</color>
     <color name="mqttchat_textColorPrimary">#1B71A5</color>
-
+    <color name="mqttchat_pluginsToolbarTextColor">#ffffff</color>
 </resources>

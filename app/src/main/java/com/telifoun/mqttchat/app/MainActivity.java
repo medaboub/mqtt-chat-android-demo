@@ -17,7 +17,7 @@ import com.telifoun.mqttchat.gui.Mqttchat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button lounchMqttchat,lounchFragment;
+    private Button lounchFragment;
     private Button logOut;
     private TextView welcom;
     @Override
@@ -28,24 +28,6 @@ public class MainActivity extends AppCompatActivity {
         welcom =(TextView) findViewById(R.id.welcom);
         welcom.setText("Welcom: "+Mqttchat.getmInstance().getLoggedUser().getName()+" "+
                 Mqttchat.getmInstance().getLoggedUser().getSurName());
-
-
-        lounchMqttchat=(Button) findViewById(R.id.lounchMqttchat);
-        lounchMqttchat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Mqttchat.getmInstance().lounchMqttChat(getApplicationContext(), new Callback() {
-                    @Override
-                    public void OK(Object o) {
-
-                    }
-                    @Override
-                    public void KO(String s) {
-                      Toast.makeText(getApplicationContext(),"MQTTCHAT lounch error: "+s, Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });
 
 
         lounchFragment=(Button) findViewById(R.id.lounchMqttchatFragment);

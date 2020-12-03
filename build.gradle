@@ -19,7 +19,7 @@ allprojects {
         google()
         jcenter()
         maven {
-            url "http://mqttchat.telifoun.com:8081/artifactory/libs-release-local"
+            url "https://mqttchat.jfrog.io/artifactory/libs-release-local"
             credentials {
                 username = "mqttchat"
                 password = "telifoun"

@@ -17,6 +17,9 @@ import com.telifoun.mqttchat.gui.Mqttchat;
 import com.telifoun.mqttchat.sdk.RestResponse;
 import com.telifoun.mqttchat.sdk.sdkCallback;
 import com.telifoun.mqttchat.sdk.sdkUser;
+import com.telifoun.mqttchat.volley.toolbox.JsonObjectRequest;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -64,12 +67,19 @@ public class RegisterActivity extends AppCompatActivity {
         new Thread((new Runnable() {
             @Override
             public void run() {
+
                 mProgressDialog.setMessage("Adding User ...");
-                sdkUser user =new sdkUser();
-                user.Set(Integer.parseInt(userId.getText().toString()),name.getText().toString(),surname.getText().toString(),gender);
-                user.Add(new sdkCallback() {
+
+                HashMap<String,Object> user_data=new HashMap<String,Object>();
+                user_data.put("userid", Integer.parseInt(userId.getText().toString()));
+                user_data.put("name", name.getText().toString());
+                user_data.put("surname",surname.getText().toString());
+                user_data.put("gender",gender);
+
+                (new restRequest()).request(JsonObjectRequest.Method.POST, Config.URL_USER_REGISTER, user_data, new Callback() {
                     @Override
-                    public void OK(RestResponse restResponse) {
+                    public void OK(Object o) {
+                        Mqttchat.getmInstance().debugCore(true,o.toString());
                         mProgressDialog.setMessage("User add success");
                         mProgressDialog.setMessage("Login to demo application with new user ...");
                         Mqttchat.getmInstance().logIn(getApplication(), Integer.parseInt(userId.getText().toString()), new Callback() {
@@ -90,12 +100,12 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void KO(RestResponse restResponse) {
+                    public void KO(String s) {
+                        Mqttchat.getmInstance().debugCore(false,s);
                         mProgressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(),"Add new user error !:"+restResponse.getError().getError(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Add new user error !:"+s,Toast.LENGTH_LONG).show();
                     }
                 });
-
             }
         })).start();
     }

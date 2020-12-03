@@ -29,16 +29,6 @@
     </TextView>
 
 
-    <Button
-        android:layout_marginTop="25dp"
-        android:id="@+id/lounchMqttchat"
-        style="?android:textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lounch MQTTCHAT Activity"
-        android:textStyle="bold" />
-
-
         <Button
             android:layout_marginTop="25dp"
             android:id="@+id/lounchMqttchatFragment"

@@ -27,21 +27,19 @@ public class mApplication  extends Application {
     public void onCreate() {
         super.onCreate();
 
-
         // do the ACRA init here
         new Mqttchat.getBuilder()
                 .context(this.getApplicationContext())
                 .appName(getApplicationContext().getResources().getString(R.string.app_name))
                 .appIcon(R.drawable.ic_mqttchat_logo_short)
-                .domain("exemple.com")
+                .domain("mqtt-chat.com")
                 .appId("mqttchat-87226030")
                 .appSecret("mqttchat-56vvfbvnpe0uvuid")
-                .showBackButton(true)
                 .debugMode(true)
                 .useFriends(false)
                 .build();
 
-
+        Mqttchat.getmInstance().debugCore(true,"upload url:"+Mqttchat.getmInstance().getPhotosUploadUrl());
         Mqttchat.getmInstance().addMqttchatListener(new mqttchatListener() {
             @Override
             public void onLoadComplete() {

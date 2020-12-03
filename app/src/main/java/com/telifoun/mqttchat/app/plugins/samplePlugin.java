@@ -140,7 +140,9 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
       if(!canSend){
           return;
       }
-      this.sendMessage("plugin text message to Send", new Callback() {
+
+      Message message=this.addMessage(getMessageActivity().getToUserid(),"plugin text message to Send");
+      sendMessage(message, new Callback() {
           @Override
           public void OK(Object o) {
               getMessageActivity().requestMessageBtnOff(getName());
@@ -152,5 +154,7 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
               onError(s);
           }
       });
+
+
     }
 }
