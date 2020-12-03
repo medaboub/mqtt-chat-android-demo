@@ -39,8 +39,7 @@ public class mApplication  extends Application {
                 .useFriends(false)
                 .build();
 
-        Mqttchat.getmInstance().debugCore(true,"upload url:"+Mqttchat.getmInstance().getPhotosUploadUrl());
-        Mqttchat.getmInstance().addMqttchatListener(new mqttchatListener() {
+           Mqttchat.getmInstance().addMqttchatListener(new mqttchatListener() {
             @Override
             public void onLoadComplete() {
               Log.i(Tag,"MQTT Chat load complete");
