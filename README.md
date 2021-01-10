@@ -6,7 +6,7 @@ MQTTchat Android is an android library that provides full chat functionality and
   </td><td>
   <a href="https://ibb.co/mqM07mD"><img src="https://i.ibb.co/6Pf852n/2021-01-10-20-58-38-20210110-210214.png" alt="2021-01-10-20-58-38-20210110-210214" border="0" height=360></a>
   </td><td>
- <a href="https://ibb.co/LrV80DB"><img src="https://i.ibb.co/2SGyF0R/2020-02-06-18-53-14.jpg" alt="MQTT CHAT screenshot" border="0" height=360></a>
+ <a href="https://ibb.co/k1WjFmS"><img src="https://i.ibb.co/py9cphL/2021-01-10-21-05-12-20210110-210808.png" alt="2021-01-10-21-05-12-20210110-210808" border="0"  height=360/></a>
   </td></tr>
   </table>
   <table><tr><td>
