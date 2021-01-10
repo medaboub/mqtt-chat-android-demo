@@ -4,7 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.telifoun.mqttchat.core.MqttchatA;
-import com.telifoun.mqttchat.core.listeners.mqttchatListener;
+import com.telifoun.mqttchat.core.listeners.MqttchatListener;
 import com.telifoun.mqttchat.core.messenger.Ack;
 import com.telifoun.mqttchat.core.messenger.Message;
 import com.telifoun.mqttchat.gui.Mqttchat;
@@ -21,7 +21,9 @@ import com.telifoun.mqttchat.sdk.sdk;
 import com.telifoun.mqttchat.app.modules.userProfile;
 import com.telifoun.mqttchat.app.plugins.samplePlugin;
 
-public class mApplication  extends Application {
+import androidx.multidex.MultiDexApplication;
+
+public class mApplication  extends MultiDexApplication {
     public final String Tag="mqttchat_demo";
     @Override
     public void onCreate() {
@@ -39,7 +41,7 @@ public class mApplication  extends Application {
                 .useFriends(false)
                 .build();
 
-           Mqttchat.getmInstance().addMqttchatListener(new mqttchatListener() {
+           Mqttchat.getmInstance().addMqttchatListener(new MqttchatListener() {
             @Override
             public void onLoadComplete() {
               Log.i(Tag,"MQTT Chat load complete");

@@ -26,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.demo_activity_main);
 
         welcom =(TextView) findViewById(R.id.welcom);
-        welcom.setText("Welcom: "+Mqttchat.getmInstance().getLoggedUser().getName()+" "+
-                Mqttchat.getmInstance().getLoggedUser().getSurName());
+        welcom.setText("Lounch Chat");
 
 
         lounchFragment=(Button) findViewById(R.id.lounchMqttchatFragment);
