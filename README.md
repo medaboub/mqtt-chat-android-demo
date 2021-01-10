@@ -38,6 +38,7 @@ MQTTchat Android is an android library that provides full chat functionality and
 - Data Retention : up to 30 days
 - Offline notifications
 - Offline audio and video calls
+- Contacts and messages stored in SQlite DB.
 - Presence & messages webhooks.
 
 ## Documentation
