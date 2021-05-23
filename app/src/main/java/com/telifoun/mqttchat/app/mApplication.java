@@ -105,6 +105,7 @@ public class mApplication  extends MultiDexApplication {
                 true,
                 R.drawable.ic_share_off,
                 R.drawable.ic_share_on);
+        p.setmViewType(pluginA.viewType.OTHERS);
         Mqttchat.getmInstance().getPlugins().add(p);
 
         Mqttchat.getmInstance().debugCore(true,"plugins size:"+p.getpIndex());

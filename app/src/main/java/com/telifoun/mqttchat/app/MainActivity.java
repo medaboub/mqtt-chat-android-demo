@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
        chatWithUserId.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View view) {
-              try{
+            /*  try{
                    Mqttchat.getmInstance().openChatWindowWith(MainActivity.this, Integer.parseInt(toUserId.getText().toString()), new Callback() {
                        @Override
                        public void OK(Object o) {
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                    });
                }catch(Exception ex){
                   Toast.makeText(getApplicationContext(),"MQTTCHAT lounch error: "+ex.getMessage(), Toast.LENGTH_LONG).show();
-              }
+              }*/
            }
        });
 

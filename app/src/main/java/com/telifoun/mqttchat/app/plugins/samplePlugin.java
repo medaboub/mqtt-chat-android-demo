@@ -41,6 +41,8 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
       this.canSend=false;
     }
 
+
+
     /**
      * function that build plugin view inside send message box
      */
@@ -61,7 +63,7 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
      * @return
      */
     @Override
-    public View render(LinearLayout linearLayout, View view, Message message) {
+    public View render(LinearLayout linearLayout, View view, Message message, int i) {
         if(view==null){
             LayoutInflater mInflater = (LayoutInflater) linearLayout.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = mInflater.inflate(R.layout.render_plugin, linearLayout, false);
