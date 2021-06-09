@@ -143,7 +143,7 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
           return;
       }
 
-      Message message=this.addMessage(getMessageActivity().getToUserid(),"plugin text message to Send");
+      Message message=this.addMessage(getMessageActivity().getToUserId(),"plugin text message to Send");
       sendMessage(message, new Callback() {
           @Override
           public void OK(Object o) {

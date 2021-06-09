@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import com.telifoun.mqttchat.core.Callback;
 import com.telifoun.mqttchat.core.MqttchatA;
 import com.telifoun.mqttchat.gui.Mqttchat;
+import com.telifoun.mqttchat.tools.alert_dialog.AlertDialog;
 
 public class LoginActivity extends AppCompatActivity {
     private Button signInBtn;
@@ -83,11 +84,27 @@ public class LoginActivity extends AppCompatActivity {
             Mqttchat.getmInstance().logIn(getApplication(), Integer.parseInt(userId), new Callback() {
                 @Override
                 public void OK(Object o) {
-                    mProgressBar.setVisibility(View.GONE);
-                    signInBtn.setEnabled(true);
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
-                    finish();
+                    Mqttchat.getmInstance().Connect(new Callback() {
+                        @Override
+                        public void OK(Object o) {
+                            mProgressBar.setVisibility(View.GONE);
+                            signInBtn.setEnabled(true);
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+
+                        @Override
+                        public void KO(String s) {
+                            AlertDialog.YesOnly(LoginActivity.this,"Error",s);
+                            mProgressBar.setVisibility(View.GONE);
+                            signInBtn.setEnabled(true);
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+
+                    });
 
                 }
 
