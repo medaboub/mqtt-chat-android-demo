@@ -1,23 +1,24 @@
 # mqtt-chat-android
-MQTTchat Android is an android library that provides full chat functionality and can be integrated into any android application from API 14.
+MQTT chat Android is an android library that provides full chat functionality and can be integrated into any android application from API 16.
+<br>It allows you to integrate a complete messenger in your application.
 <br>Below some screenshots of the demo application hosted in this github repository.
 <br><br>
- [![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=wjXeNZaPeLE)](https://www.youtube.com/watch?v=wjXeNZaPeLE "MQTTChat android Demo")
-<br><br>
+[MQTTChat version 3.0 Demo](https://www.youtube.com/watch?v=7OmpWdefUEk "MQTT CHAT version 3.0")
+<br>
 <table><tr><td>
-<a href="https://ibb.co/gzvncR2"><img src="https://i.ibb.co/LnQGsZF/2021-01-10-20-45-17-20210110-204417.png" alt="2021-01-10-20-45-17-20210110-204417" border="0" height=360></a>
+<a href="https://ibb.co/gzvncR2"><img src="https://i.ibb.co/dMNTWmm/device-2021-05-23-185700.png" alt="mqtt chat " border="0" ></a>
   </td><td>
-  <a href="https://ibb.co/vQVr5Pj"><img src="https://i.ibb.co/YyPK9kL/2021-01-10-20-58-38-20210110-210214.png" alt="2021-01-10-20-58-38-20210110-210214" border="0" height=360></a>
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/jHQfQ1d/device-2021-05-23-190025.png" alt="mqtt cha" border="0" /></a>
   </td><td>
- <a href="https://ibb.co/k1WjFmS"><img src="https://i.ibb.co/py9cphL/2021-01-10-21-05-12-20210110-210808.png" alt="2021-01-10-21-05-12-20210110-210808" border="0"  height=360/></a>
+ <a href="https://imgbb.com/"><img src="https://i.ibb.co/6yMFP6H/device-2021-05-23-190229.png" alt="mqtt cha" border="0" /></a>
   </td></tr>
   </table>
   <table><tr><td>
-<a href="https://ibb.co/jJpX0Zr"><img src="https://i.ibb.co/TWC3jqg/2021-01-10-21-17-59-20210110-212041.png" alt="2021-01-10-21-17-59-20210110-212041" border="0" height=360/></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/ynwqn5N/device-2021-05-23-190414.png" alt="mqtt chat" border="0" /></a>
   </td><td>
-<a href="https://ibb.co/TqRKwnY"><img src="https://i.ibb.co/DgkG16z/2021-01-10-21-25-15-20210110-212804.png" alt="2021-01-10-21-25-15-20210110-212804" border="0" height=360></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/v1mbT80/device-2021-05-23-190727.png" alt="mqtt chat" border="0" /></a>
   </td><td>
-<a href="https://ibb.co/mHR1zPV"><img src="https://i.ibb.co/D71sKjH/2020-02-09-11-23-27.jpg" alt="2020-02-09-11-23-27" border="0" height=360></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/3kJ9cBQ/device-2021-05-23-191608.png" alt="mqtt chat" border="0" /></a>
   </td>
   </tr>
   </table>
@@ -43,7 +44,8 @@ MQTTchat Android is an android library that provides full chat functionality and
 - Offline audio and video calls
 - Contacts and messages stored in SQlite DB.
 - Presence & messages webhooks.
+<br><br>And much more ...
 
 ## Documentation
-__For more informations please read the complete <a href="https://doc.mqtt-chat.com/mqttchat-android/integration">MQTTchat android documentation</a>.__
+__For more informations please read the complete <a href="https://doc.mqtt-chat.com/mqttchat-android/integration">MQTT chat android documentation</a>.__
 
