@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import com.telifoun.mqttchat.core.Callback;
-import com.telifoun.mqttchat.core.MqttchatA;
-import com.telifoun.mqttchat.gui.Mqttchat;
+
+import com.telifoun.mqttchat.core.clbs.CallbackListener;
+import com.telifoun.mqttchat.gui.MqttChat;
 import com.telifoun.mqttchat.tools.alert_dialog.AlertDialog;
 
 public class LoginActivity extends AppCompatActivity {
@@ -81,12 +81,12 @@ public class LoginActivity extends AppCompatActivity {
 
            mProgressBar.setVisibility(View.VISIBLE);
 
-            Mqttchat.getmInstance().logIn(getApplication(), Integer.parseInt(userId), new Callback() {
+            MqttChat.getInstance().logIn(getApplication(), Integer.parseInt(userId), new CallbackListener() {
                 @Override
-                public void OK(Object o) {
-                    Mqttchat.getmInstance().Connect(new Callback() {
+                public void onSuccess(Object o) {
+                    MqttChat.getInstance().Connect(new CallbackListener() {
                         @Override
-                        public void OK(Object o) {
+                        public void onSuccess(Object o) {
                             mProgressBar.setVisibility(View.GONE);
                             signInBtn.setEnabled(true);
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);
@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
 
                         @Override
-                        public void KO(String s) {
+                        public void onError(String s) {
                             AlertDialog.YesOnly(LoginActivity.this,"Error",s);
                             mProgressBar.setVisibility(View.GONE);
                             signInBtn.setEnabled(true);
@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void KO(String s) {
+                public void onError(String s) {
                     signInBtn.setEnabled(true);
                     mUserId.setError(s);
                     mUserId.requestFocus();

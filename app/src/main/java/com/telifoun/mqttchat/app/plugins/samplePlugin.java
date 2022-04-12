@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.telifoun.mqttchat.core.Callback;
-import com.telifoun.mqttchat.core.MqttchatA;
+;
+import com.telifoun.mqttchat.core.clbs.CallbackListener;
 import com.telifoun.mqttchat.core.messenger.Message;
-import com.telifoun.mqttchat.gui.Mqttchat;
+
 import com.telifoun.mqttchat.app.R;
+import com.telifoun.mqttchat.gui.MqttChat;
 
 import org.w3c.dom.Text;
 
@@ -84,7 +85,7 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
     @Override
     public SpannableStringBuilder preview(int i, Message message) {
         SpannableStringBuilder builder = new SpannableStringBuilder();
-        if(message.getFrom()== Mqttchat.getmInstance().getLoggedUser().getUserId()){ //out message
+        if(message.getFrom()== MqttChat.getInstance().getLoggedUser().getUserId()){ //out message
             builder.append("Outbox plugin message ");
         }else{
             builder.append("Inbox plugin message ");
@@ -144,14 +145,14 @@ public class samplePlugin extends com.telifoun.mqttchat.plugins.pluginA {
       }
 
       Message message=this.addMessage(getMessageActivity().getToUserId(),"plugin text message to Send");
-      sendMessage(message, new Callback() {
+      sendMessage(message, new CallbackListener() {
           @Override
-          public void OK(Object o) {
+          public void onSuccess(Object o) {
               getMessageActivity().requestMessageBtnOff(getName());
           }
 
           @Override
-          public void KO(String s) {
+          public void onError(String s) {
               getMessageActivity().requestMessageBtnOff(getName());
               onError(s);
           }

@@ -3,11 +3,13 @@ package com.telifoun.mqttchat.app;
 import android.app.Application;
 import android.util.Log;
 
-import com.telifoun.mqttchat.core.MqttchatA;
-import com.telifoun.mqttchat.core.listeners.MqttchatListener;
+
+import com.telifoun.mqttchat.core.listeners.MqttChatListener;
 import com.telifoun.mqttchat.core.messenger.Ack;
 import com.telifoun.mqttchat.core.messenger.Message;
-import com.telifoun.mqttchat.gui.Mqttchat;
+
+import com.telifoun.mqttchat.core.messenger.Notification;
+import com.telifoun.mqttchat.gui.MqttChat;
 import com.telifoun.mqttchat.plugins.picture_cam.listeners.pictureCamListener;
 import com.telifoun.mqttchat.plugins.picture_cam.pictureCam;
 import com.telifoun.mqttchat.plugins.picture_disk.listeners.pictureDiskListener;
@@ -30,9 +32,8 @@ public class mApplication  extends MultiDexApplication {
         super.onCreate();
 
         // do the ACRA init here
-        new Mqttchat.getBuilder()
+        new MqttChat.getBuilder()
                 .context(this.getApplicationContext())
-                .appName(getApplicationContext().getResources().getString(R.string.app_name))
                 .appIcon(R.drawable.ic_mqttchat_logo_short)
                 .domain("mqtt-chat.com")
                 .appId("mqttchat-87226030")
@@ -41,7 +42,7 @@ public class mApplication  extends MultiDexApplication {
                 .useFriends(false)
                 .build();
 
-           Mqttchat.getmInstance().addMqttchatListener(new MqttchatListener() {
+           MqttChat.getInstance().addMqttchatListener(new MqttChatListener() {
             @Override
             public void onLoadComplete() {
               Log.i(Tag,"MQTT Chat load complete");
@@ -73,6 +74,11 @@ public class mApplication  extends MultiDexApplication {
             }
 
             @Override
+            public void onReceiveNotification(Notification notification) {
+
+            }
+
+            @Override
             public void onUserTyping(int i, boolean b) {
                 Log.i(Tag,"A user  userId:"+i+" is currently typing to logged user; is typing :"+b);
             }
@@ -87,16 +93,18 @@ public class mApplication  extends MultiDexApplication {
                 Log.i(Tag,"Number of unread messages is changed for logged user, new number is :"+i);
             }
 
-            @Override
-            public void onError(int i, String s) {
-                Log.e(Tag,"MQTTCHAT error code :"+i+";message :"+s);
+               @Override
+            public void onError(String s) {
+                   Log.e(Tag,"MQTTCHAT error message :"+s);
             }
+
+
         });
 
 
         /** add custom user profile module to MQTTCHAT APP **/
         userProfile mProfile=new userProfile(getApplicationContext(),"User Profile","Go to Profile");
-        Mqttchat.getmInstance().getModules().add(mProfile);
+        MqttChat.getInstance().getModules().add(mProfile);
 
         /** sample plugin to MQTTCHAT **/
         samplePlugin p =new samplePlugin(getApplicationContext(),
@@ -106,9 +114,9 @@ public class mApplication  extends MultiDexApplication {
                 R.drawable.ic_share_off,
                 R.drawable.ic_share_on);
         p.setmViewType(pluginA.viewType.OTHERS);
-        Mqttchat.getmInstance().getPlugins().add(p);
+        MqttChat.getInstance().getPlugins().add(p);
 
-        Mqttchat.getmInstance().debugCore(true,"plugins size:"+p.getpIndex());
+        MqttChat.getInstance().debugCore(true,"plugins size:"+p.getpIndex());
 
     }
 }

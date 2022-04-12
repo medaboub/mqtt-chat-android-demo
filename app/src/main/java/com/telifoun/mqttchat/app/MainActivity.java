@@ -10,9 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.telifoun.mqttchat.core.Callback;
-import com.telifoun.mqttchat.core.MqttchatA;
-import com.telifoun.mqttchat.gui.Mqttchat;
+import com.telifoun.mqttchat.core.clbs.CallbackListener;
+import com.telifoun.mqttchat.gui.MqttChat;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onClick(View view) {
               try{
-                   Mqttchat.getmInstance().startChatWith(MainActivity.this, Integer.parseInt(toUserId.getText().toString()), new Callback() {
+                   MqttChat.getInstance().startChatWithUser(MainActivity.this, Integer.parseInt(toUserId.getText().toString()), new CallbackListener() {
                        @Override
-                       public void OK(Object o) {
+                       public void onSuccess(Object o) {
                        }
 
                        @Override
-                       public void KO(String s) {
+                       public void  onError(String s) {
                            Toast.makeText(getApplicationContext(), "MQTTCHAT openChatWindowWith error: " + s, Toast.LENGTH_LONG).show();
                        }
                    });
@@ -65,16 +64,16 @@ public class MainActivity extends AppCompatActivity {
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Mqttchat.getmInstance().logOut(new Callback() {
+                MqttChat.getInstance().logOut(new CallbackListener() {
                     @Override
-                    public void OK(Object o) {
+                    public void onSuccess(Object o) {
                         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(i);
                         finish();
                     }
 
                     @Override
-                    public void KO(String s) {
+                    public void onError(String s) {
                         Toast.makeText(getApplicationContext(),"MQTTCHAT logOut error: "+s, Toast.LENGTH_LONG).show();
                     }
                 });
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
      *
      */
     private void checkUserIsLoged(){
-        if(!Mqttchat.getmInstance().getLoggedUser().isLogged()){
+        if(!MqttChat.getInstance().getLoggedUser().isLogged()){
             Intent i = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(i);
             finish();

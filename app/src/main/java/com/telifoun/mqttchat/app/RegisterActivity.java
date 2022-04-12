@@ -12,8 +12,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.telifoun.mqttchat.core.Callback;
-import com.telifoun.mqttchat.gui.Mqttchat;
+
+import com.telifoun.mqttchat.core.clbs.CallbackListener;
+import com.telifoun.mqttchat.gui.MqttChat;
 import com.telifoun.mqttchat.sdk.RestResponse;
 import com.telifoun.mqttchat.sdk.sdkCallback;
 import com.telifoun.mqttchat.sdk.sdkUser;
@@ -76,15 +77,14 @@ public class RegisterActivity extends AppCompatActivity {
                 user_data.put("surname",surname.getText().toString());
                 user_data.put("gender",gender);
 
-                (new restRequest()).request(JsonObjectRequest.Method.POST, Config.URL_USER_REGISTER, user_data, new Callback() {
+                (new restRequest()).request(JsonObjectRequest.Method.POST, Config.URL_USER_REGISTER, user_data, new CallbackListener() {
                     @Override
-                    public void OK(Object o) {
-                        Mqttchat.getmInstance().debugCore(true,o.toString());
+                    public void onSuccess(Object o) {
                         mProgressDialog.setMessage("User add success");
                         mProgressDialog.setMessage("Login to demo application with new user ...");
-                        Mqttchat.getmInstance().logIn(getApplication(), Integer.parseInt(userId.getText().toString()), new Callback() {
+                        MqttChat.getInstance().logIn(getApplication(), Integer.parseInt(userId.getText().toString()), new CallbackListener() {
                             @Override
-                            public void OK(Object o) {
+                            public void onSuccess(Object o) {
                                 mProgressDialog.dismiss();
                                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(i);
@@ -92,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void KO(String s) {
+                            public void onError(String s) {
                                 mProgressDialog.dismiss();
                                 Toast.makeText(getApplicationContext(),"Login Error !:"+s,Toast.LENGTH_LONG).show();
                             }
@@ -100,8 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void KO(String s) {
-                        Mqttchat.getmInstance().debugCore(false,s);
+                    public void onError(String s) {
                         mProgressDialog.dismiss();
                         Toast.makeText(getApplicationContext(),"Add new user error !:"+s,Toast.LENGTH_LONG).show();
                     }

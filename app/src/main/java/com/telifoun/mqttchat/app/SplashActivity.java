@@ -8,8 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.telifoun.mqttchat.core.Callback;
-import com.telifoun.mqttchat.gui.Mqttchat;
+
+import com.telifoun.mqttchat.core.clbs.CallbackListener;
+import com.telifoun.mqttchat.gui.MqttChat;
 import com.telifoun.mqttchat.tools.alert_dialog.AlertDialog;
 
 public class SplashActivity extends AppCompatActivity {
@@ -42,11 +43,11 @@ public class SplashActivity extends AppCompatActivity {
      */
     private void start(){
 
-        if(Mqttchat.getmInstance().getLoggedUser().isLogged()){
+        if(MqttChat.getInstance().getLoggedUser().isLogged()){
 
-            Mqttchat.getmInstance().Connect(new Callback() {
+            MqttChat.getInstance().Connect(new CallbackListener() {
                 @Override
-                public void OK(Object o) {
+                public void onSuccess(Object o) {
                     Intent myIntent = new Intent(SplashActivity.this,MainActivity.class);
                     startActivity(myIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -54,7 +55,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void KO(String error) {
+                public void onError(String error) {
                     AlertDialog.YesOnly(SplashActivity.this,"error", error);
                     Intent myIntent = new Intent(SplashActivity.this,MainActivity.class);
                     startActivity(myIntent);
@@ -68,7 +69,7 @@ public class SplashActivity extends AppCompatActivity {
         }else {
             Intent myIntent = new Intent(SplashActivity.this, LoginActivity.class);
             startActivity(myIntent);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+           // overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         }
     }

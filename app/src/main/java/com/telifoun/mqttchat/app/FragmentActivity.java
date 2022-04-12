@@ -2,14 +2,15 @@ package com.telifoun.mqttchat.app;
 
 import android.os.Bundle;
 
-import com.telifoun.mqttchat.core.presence.PresenceActivityA;
-import com.telifoun.mqttchat.gui.MqttchatFragment;
+import com.telifoun.mqttchat.core.ui.PresenceActivityA;
+import com.telifoun.mqttchat.gui.ui.fragments.mqttchat.MqttChatFragment;
+
 
 public class FragmentActivity extends PresenceActivityA {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout);
-        getSupportFragmentManager().beginTransaction().add(R.id.mqttchatFragment, MqttchatFragment.newInstance(), "mqttchat").commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.mqttchatFragment, new MqttChatFragment(), "mqttchat").commit();
     }
 }
