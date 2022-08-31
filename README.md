@@ -38,7 +38,7 @@ MQTT chat Android is an android library that provides full chat functionality an
 - Typing Indicators
 - Read Receipts
 - Languages : ar, fr, en
-- Storage Space : up to 2Go
+- Storage Space : up to 5Go
 - Data Retention : up to 30 days
 - Offline notifications
 - Offline audio and video calls
