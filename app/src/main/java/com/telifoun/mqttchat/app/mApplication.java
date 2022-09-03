@@ -4,6 +4,10 @@ import android.app.Application;
 import android.util.Log;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.telifoun.mqttchat.core.ads.AdsManager;
 import com.telifoun.mqttchat.core.listeners.MqttChatListener;
 import com.telifoun.mqttchat.core.messenger.Ack;
 import com.telifoun.mqttchat.core.messenger.Message;
@@ -116,7 +120,17 @@ public class mApplication  extends MultiDexApplication {
         p.setmViewType(pluginA.viewType.OTHERS);
         MqttChat.getInstance().getPlugins().add(p);
 
-        MqttChat.getInstance().debugCore(true,"plugins size:"+p.getpIndex());
+        /** int admob AdView  **/
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
+        /** add AdView ads to MQTTCHAT */
+        // add in contacts fragments **/
+        MqttChat.getInstance().getAdsManager().getAdsViews().add(new com.telifoun.mqttchat.core.ads.AdView(adView, AdsManager.AdLocation.CONTACTS));
+        // add in Messages Activity **/
+        MqttChat.getInstance().getAdsManager().getAdsViews().add(new com.telifoun.mqttchat.core.ads.AdView(adView, AdsManager.AdLocation.MESSAGES));
     }
 }
