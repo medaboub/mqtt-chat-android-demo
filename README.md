@@ -3,8 +3,8 @@ MQTT chat Android is an android library that provides full chat functionality an
 <br>It allows you to integrate a complete messenger in your android application.
 <br>Below some screenshots of the demo application hosted in this github repository.
 <br><br>
-[MQTTChat version 3.0 Demo](https://www.youtube.com/watch?v=7OmpWdefUEk "MQTT CHAT version 3.0")
-<br>
+
+
 <table><tr><td>
 <a href="https://ibb.co/gzvncR2"><img src="https://i.ibb.co/dMNTWmm/device-2021-05-23-185700.png" alt="mqtt chat " border="0" ></a>
   </td><td>
