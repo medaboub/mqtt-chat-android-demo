@@ -1,5 +1,5 @@
 # mqtt-chat-android
-MQTT chat Android is an android library that provides full chat functionality and can be integrated into any android application from API 16.
+MQTT CHAT Android is an android library that provides full chat functionality and can be integrated into any android application from API 16.
 <br>It allows you to integrate a complete messenger in your android application.
 <br>Below some screenshots of the demo application hosted in this github repository.
 <br><br>
